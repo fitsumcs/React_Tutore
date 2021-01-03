@@ -27,6 +27,18 @@
 
 class Note extends React.Component {
 
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            edit : false
+        }
+    }
+
+    openSave = ()=>{
+        this.setState({edit : true})
+    }
+
  
 
     handleSubmit  =()=> {
@@ -53,7 +65,7 @@ class Note extends React.Component {
                 <div className="ed">
 
                     <h3>Edit Your Note !!</h3>
-                    <button className="btn">Edit Note </button> 
+                    <button className="btn" onClick={this.openSave}>Edit Note </button> 
                     <button className="btn">Delete Note </button> 
                 </div>
                 
@@ -62,6 +74,11 @@ class Note extends React.Component {
     }
 
     render() {
+
+        if(this.state.edit === true)
+        {
+            return this.saveNote()
+        }
 
         return this.editNote()
      
