@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Demo 5 </title>
+    
+    <!-- React CDN  -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<!-- Babble CDN -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+
+
+
+
+    <script type="text/babel">
+
+        class EventExample extends React.Component
+        { 
+
+            clickMe()
+            {
+                alert("You Have Clicked Me!!")
+            }
+
+            
+            render() 
+            { 
+                return( 
+                 <div>
+                   <h1>Event Demo</h1>
+                   <button onClick={this.clickMe}> Click Me </button>
+                </div>);
+         }
+     }
+ 
+    // Render it ... 
+        ReactDOM.render(
+    
+                <EventExample />
+
+          
+            , document.getElementById("root") );
+    </script>
+
+</body>
+
+</html>
