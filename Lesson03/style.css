@@ -1,8 +1,28 @@
+
 body{
-    position: relative;
+    background-color: beige;
 }
 .container{
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ed{
+    background-color: azure;
+    padding: 4rem;
+}
+.btn{
+
+ 
+    background-color: rgb(59, 153, 153);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4rem;
+    border-style: none;
+    border-radius: 20px;
+
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
 }

@@ -33,24 +33,43 @@ class Note extends React.Component {
         alert('A Text submitted: ' + this.refs.newText.value);
     }
 
-    render() {
-
+    saveNote = ()=>{
         return (
             <div className="container">
+                <h3>Save Your Note !!</h3>
                 <textarea ref="newText" cols="30" rows="10"></textarea>
                 <br />
-                <input type="button" value="View Text " onClick={this.handleSubmit} />
+                <input type="button" value="Save Data " onClick={this.handleSubmit} className="btn" />
                 </div>
           
              
       
         );
+    }
+
+    editNote = ()=>{
+        return (
+            <div className="container">
+                <div className="ed">
+
+                    <h3>Edit Your Note !!</h3>
+                    <button className="btn">Edit Note </button> 
+                    <button className="btn">Delete Note </button> 
+                </div>
+                
+            </div>
+        );
+    }
+
+    render() {
+
+        return this.editNote()
      
     }
 }
  
     // Render it ... 
-        ReactDOM.render(<RefDemo />, document.getElementById("root") );
+        ReactDOM.render(<Note />, document.getElementById("root") );
     </script>
 
 </body>
