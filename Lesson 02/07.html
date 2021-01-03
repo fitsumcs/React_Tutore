@@ -13,18 +13,6 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 
-<style>
-
-    .cssDemo{
-        
-
-        background-color: aqua;
-        text-align: center;
-
-
-    }
-</style>
-
 <body>
 
     <div id="root"></div>
@@ -35,21 +23,32 @@
 
     <script type="text/babel">
 
-        class CssDemo extends React.Component
-        { 
-            
-            render() 
-            { 
-                return( 
-                 <div className="cssDemo">
-                   <h1>Hello World !!</h1>
-                   <p>This is React Inline Css !!</p>
-                </div>);
-         }
-     }
+class RefDemo extends React.Component {
+
+ 
+
+    handleSubmit  =()=> {
+        alert('A Text submitted: ' + this.refs.newText.value);
+    }
+
+    render() {
+
+        return (
+            <div>
+                <textarea ref="newText" cols="30" rows="10"></textarea>
+                <br />
+                <input type="button" value="View Text " onClick={this.handleSubmit} />
+                </div>
+          
+             
+      
+        );
+     
+    }
+}
  
     // Render it ... 
-        ReactDOM.render(<CssDemo /> , document.getElementById("root") );
+        ReactDOM.render(<RefDemo />, document.getElementById("root") );
     </script>
 
 </body>
