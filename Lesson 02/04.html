@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React Demo 3 </title>
+    <title>React Demo 4 </title>
     
     <!-- React CDN  -->
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -23,7 +23,7 @@
 
     <script type="text/babel">
 
-        class FirstComponent extends React.Component
+        class FirstComponent3 extends React.Component
         { 
             
             render() 
@@ -31,13 +31,21 @@
                 return( 
                  <div>
                    <h1>{this.props.text}</h1>
-                   <p>This is React Component with Props !!</p>
+                   <p>{this.props.children}</p>
                 </div>);
          }
      }
  
     // Render it ... 
-        ReactDOM.render(<FirstComponent text="Hi There"/> , document.getElementById("root") );
+        ReactDOM.render(
+            <div>
+                <FirstComponent3 text="Hi There">This is React Component with Props 1 !! </FirstComponent3>
+                <FirstComponent3 text="How you  There">This is React Component with Props 2!! </FirstComponent3>
+                <FirstComponent3 text="Bye There"> This is React Component with Props 3!!</FirstComponent3>
+
+                </div>
+          
+            , document.getElementById("root") );
     </script>
 
 </body>
