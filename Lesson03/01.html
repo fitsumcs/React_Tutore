@@ -65,6 +65,7 @@ class Note extends React.Component {
                 <div className="ed">
 
                     <h3>Edit Your Note !!</h3>
+                    <p>{this.props.children}</p>
                     <button className="btn" onClick={this.openSave}>Edit Note </button> 
                     <button className="btn">Delete Note </button> 
                 </div>
@@ -84,9 +85,34 @@ class Note extends React.Component {
      
     }
 }
+class Board extends React.Component{
+
+   constructor(props)
+   {
+       super(props);
+       this.state = {
+           notes : ['Note 1', 'Note 2','Note 3','Note 4','Note 5','Note 6','Note 7']
+       }
+   }
+
+
+    render(){
+        return(
+            <div className="board">
+            
+             {this.state.notes.map((note, i)=>{
+                 return <Note key={i} > {note} </Note>
+
+             })}
+
+
+                </div>
+        );
+    }
+}
  
     // Render it ... 
-        ReactDOM.render(<Note />, document.getElementById("root") );
+        ReactDOM.render(<Board count="10" />, document.getElementById("root") );
     </script>
 
 </body>
